@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Text, StatusBar, StyleSheet, Pressable, TouchableOpacity } from 'react-native';
+import { StatusBar, StyleSheet, Pressable, TouchableOpacity } from 'react-native';
 import { MotiView, useAnimationState } from 'moti'
 import Colors from '~/theme/colors';
 import * as S from './styles'
+import { useNavigation } from '@react-navigation/native';
 
-const Main = () => {
+const Main: React.FC = () => {
+  const navigation = useNavigation();
   const [changeState, setChangeState] = useState('');
-  
+
   useEffect(() => {
     setChangeState('State inicial!');
   }, []);
@@ -31,11 +33,7 @@ const Main = () => {
   }
 
   return (
-  <>
-    <S.Header>
-      <S.TextHeader>Página com React Native</S.TextHeader>
-    </S.Header>
-      
+  <>      
     <S.Container>
       <StatusBar
         translucent
@@ -60,7 +58,7 @@ const Main = () => {
           </Pressable>
         </MotiView>
         
-      <S.Button>
+      <S.Button onPress={() => navigation.navigate('SecondPage')}>
         <S.TextButton>IR PARA PRÓXIMA TELA</S.TextButton>
       </S.Button>
     </S.Container>

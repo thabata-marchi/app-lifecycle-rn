@@ -1,3 +1,4 @@
+import { Platform } from 'react-native';
 import styled from 'styled-components/native';
 import Colors from '~/theme/colors';
 import { RFPercentage } from "react-native-responsive-fontsize";
@@ -24,7 +25,7 @@ export const TextClick = styled.Text`
   margin-top: 5px;
 `;
 
-export const Animate = styled.View`
+export const Square = styled.TouchableOpacity`
   width: 50px;
   height: 50px;
   background-color: ${Colors.greenLight};
@@ -55,6 +56,6 @@ export const Header = styled.View`
 export const TextHeader = styled.Text`
   color: ${Colors.greenText};
   font-size: 20px;
-  margin-top: ${RFPercentage(5)};
+  margin-top: ${Platform.OS === 'ios'? RFPercentage(5) : RFPercentage(2)};
   font-weight: 400;
 `;

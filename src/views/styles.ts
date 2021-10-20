@@ -25,13 +25,6 @@ export const TextClick = styled.Text`
   margin-top: 5px;
 `;
 
-export const Square = styled.TouchableOpacity`
-  width: 50px;
-  height: 50px;
-  background-color: ${Colors.greenLight};
-  margin: 25px 0;
-`;
-
 export const Button = styled.TouchableOpacity`
   background-color: ${Colors.greenButton};
   border-radius: 5px;
